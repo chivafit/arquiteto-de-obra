@@ -302,7 +302,10 @@
 
       document.addEventListener('click', function (event) {
         var link = event.target.closest('a[href*="hotmart.com"]');
-        if (link && window.fbq) window.fbq('track', 'AddToCart', { value: 97.00, currency: 'BRL' });
+        if (link && window.fbq) {
+          window.fbq('track', 'AddToCart', { value: 97.00, currency: 'BRL' });
+          window.fbq('track', 'InitiateCheckout', { value: 97.00, currency: 'BRL' });
+        }
       }, true);
     }());
   </script>
